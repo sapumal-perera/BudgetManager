@@ -1,0 +1,12 @@
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\bin\Debug\BudgetManager.exe.config
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\bin\Debug\BudgetManager.exe
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\bin\Debug\BudgetManager.pdb
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.csproj.AssemblyReference.cache
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.csproj.SuggestedBindingRedirects.cache
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.LoginForm.resources
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.Properties.Resources.resources
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.csproj.GenerateResource.cache
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.csproj.CoreCompileInputs.cache
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.exe
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.pdb
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.HomePage.resources
