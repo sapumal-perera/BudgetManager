@@ -31,18 +31,18 @@
             this.components = new System.ComponentModel.Container();
             this.lblUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dtFilterFromDate = new System.Windows.Forms.DateTimePicker();
+            this.dtFilterToDate = new System.Windows.Forms.DateTimePicker();
+            this.cmbFilterType = new System.Windows.Forms.ComboBox();
             this.btnFilter = new System.Windows.Forms.Button();
             this.dtgTransactionGrid = new System.Windows.Forms.DataGridView();
             this.transactionDataStore = new BudgetManager.TransactionDataStore();
             this.transactionDataStoreBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbFilterCategory = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTransactionGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionDataStore)).BeginInit();
@@ -54,9 +54,10 @@
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblUser.Location = new System.Drawing.Point(11, 15);
+            this.lblUser.Location = new System.Drawing.Point(8, 12);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(57, 25);
+            this.lblUser.Size = new System.Drawing.Size(47, 20);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "User";
             // 
@@ -69,81 +70,94 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(823, 83);
+            this.panel1.Size = new System.Drawing.Size(617, 67);
             this.panel1.TabIndex = 4;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(723, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 37);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Predictor";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.OpenPredictor);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(498, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 36);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Add Income";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.AddIncomeTransaction);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(609, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 36);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Add Expense";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.AddExpenseTransaction);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Location = new System.Drawing.Point(74, 15);
+            this.label3.Location = new System.Drawing.Point(56, 12);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(193, 25);
+            this.label3.Size = new System.Drawing.Size(160, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "\'s Budget Manager";
             // 
-            // dateTimePicker1
+            // button4
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 115);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(231, 22);
-            this.dateTimePicker1.TabIndex = 5;
+            this.button4.Location = new System.Drawing.Point(542, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(73, 30);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Predictor";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.OpenPredictor);
             // 
-            // dateTimePicker2
+            // button1
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(249, 117);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(229, 22);
-            this.dateTimePicker2.TabIndex = 6;
+            this.button1.Location = new System.Drawing.Point(457, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 29);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Add Expense";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.AddExpenseTransaction);
             // 
-            // comboBox1
+            // button2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(484, 117);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(103, 24);
-            this.comboBox1.TabIndex = 9;
+            this.button2.Location = new System.Drawing.Point(374, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(79, 29);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Add Income";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.AddIncomeTransaction);
+            // 
+            // dtFilterFromDate
+            // 
+            this.dtFilterFromDate.Location = new System.Drawing.Point(9, 93);
+            this.dtFilterFromDate.Margin = new System.Windows.Forms.Padding(2);
+            this.dtFilterFromDate.Name = "dtFilterFromDate";
+            this.dtFilterFromDate.Size = new System.Drawing.Size(174, 20);
+            this.dtFilterFromDate.TabIndex = 5;
+            // 
+            // dtFilterToDate
+            // 
+            this.dtFilterToDate.Location = new System.Drawing.Point(187, 93);
+            this.dtFilterToDate.Margin = new System.Windows.Forms.Padding(2);
+            this.dtFilterToDate.Name = "dtFilterToDate";
+            this.dtFilterToDate.Size = new System.Drawing.Size(173, 20);
+            this.dtFilterToDate.TabIndex = 6;
+            // 
+            // cmbFilterType
+            // 
+            this.cmbFilterType.FormattingEnabled = true;
+            this.cmbFilterType.Items.AddRange(new object[] {
+            "expense",
+            "income"});
+            this.cmbFilterType.Location = new System.Drawing.Point(364, 93);
+            this.cmbFilterType.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbFilterType.Name = "cmbFilterType";
+            this.cmbFilterType.Size = new System.Drawing.Size(78, 21);
+            this.cmbFilterType.TabIndex = 9;
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(714, 114);
+            this.btnFilter.Location = new System.Drawing.Point(536, 93);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(2);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnFilter.Size = new System.Drawing.Size(56, 19);
             this.btnFilter.TabIndex = 10;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.onClickFilter);
             // 
             // dtgTransactionGrid
             // 
@@ -152,11 +166,12 @@
             this.dtgTransactionGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgTransactionGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgTransactionGrid.GridColor = System.Drawing.Color.DarkGray;
-            this.dtgTransactionGrid.Location = new System.Drawing.Point(0, 158);
+            this.dtgTransactionGrid.Location = new System.Drawing.Point(0, 128);
+            this.dtgTransactionGrid.Margin = new System.Windows.Forms.Padding(2);
             this.dtgTransactionGrid.Name = "dtgTransactionGrid";
             this.dtgTransactionGrid.RowHeadersWidth = 51;
             this.dtgTransactionGrid.RowTemplate.Height = 24;
-            this.dtgTransactionGrid.Size = new System.Drawing.Size(823, 331);
+            this.dtgTransactionGrid.Size = new System.Drawing.Size(617, 269);
             this.dtgTransactionGrid.TabIndex = 11;
             // 
             // transactionDataStore
@@ -169,27 +184,29 @@
             this.transactionDataStoreBindingSource.DataSource = this.transactionDataStore;
             this.transactionDataStoreBindingSource.Position = 0;
             // 
-            // comboBox2
+            // cmbFilterCategory
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(593, 115);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(104, 24);
-            this.comboBox2.TabIndex = 12;
+            this.cmbFilterCategory.FormattingEnabled = true;
+            this.cmbFilterCategory.Location = new System.Drawing.Point(446, 93);
+            this.cmbFilterCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbFilterCategory.Name = "cmbFilterCategory";
+            this.cmbFilterCategory.Size = new System.Drawing.Size(79, 21);
+            this.cmbFilterCategory.TabIndex = 12;
             // 
             // HomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(823, 489);
-            this.Controls.Add(this.comboBox2);
+            this.ClientSize = new System.Drawing.Size(617, 397);
+            this.Controls.Add(this.cmbFilterCategory);
             this.Controls.Add(this.dtgTransactionGrid);
             this.Controls.Add(this.btnFilter);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.cmbFilterType);
+            this.Controls.Add(this.dtFilterToDate);
+            this.Controls.Add(this.dtFilterFromDate);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomePage";
             this.Text = "Budget Manager Home";
             this.Load += new System.EventHandler(this.HpmePage_load);
@@ -210,13 +227,13 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dtFilterFromDate;
+        private System.Windows.Forms.DateTimePicker dtFilterToDate;
+        private System.Windows.Forms.ComboBox cmbFilterType;
         private System.Windows.Forms.Button btnFilter;
         private TransactionDataStore transactionDataStore;
         private System.Windows.Forms.BindingSource transactionDataStoreBindingSource;
         public System.Windows.Forms.DataGridView dtgTransactionGrid;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbFilterCategory;
     }
 }

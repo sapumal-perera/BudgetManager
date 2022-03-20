@@ -14,9 +14,15 @@ namespace BudgetManager
     public partial class HomePage : Form
     {
         TransactionDataStore transactionStore = new TransactionDataStore();
+        CategoryDataStore categoryStore = new CategoryDataStore();
 
         public String currentUser { get; set; }
         Transaction transactionData;
+        DateTime filterFromDate;
+        DateTime filterToDate;
+        String filterCategory;
+        String filterType;
+
         public HomePage()
         {
             InitializeComponent();
@@ -50,14 +56,21 @@ namespace BudgetManager
         private void AddIncomeTransaction(object sender, EventArgs e)
         {
             AddTransaction addTransactionView = new AddTransaction("income");
+            addTransactionView.RecordAdded += CategoryAdded;
             addTransactionView.Show();
+
             transactionData = addTransactionView.newTransaction;
             //this.transactionStore.
         }
-
-        private void ShowWeklySummary(object sender, EventArgs e)
+        private void CategoryAdded(object sender, Category catg)
         {
-        
+            CategoryDataStore.CategoryRow category = this.categoryStore.Category.NewCategoryRow();
+            category.Type = catg.Type;
+            category.Title = catg.Title;
+            category.Description = catg.Description;
+            category.Budget = catg.Budget;
+
+            this.categoryStore.Category.AddCategoryRow(category);
         }
 
         private void ShowSummary()
@@ -67,6 +80,14 @@ namespace BudgetManager
         private void OpenPredictor(object sender, EventArgs e)
         {
 
+        }
+
+        private void onClickFilter(object sender, EventArgs e)
+        {
+            this.filterFromDate = this.dtFilterFromDate.Value;
+            this.filterToDate = this.dtFilterToDate.Value;
+            this.filterType = this.cmbFilterType.Text;
+            this.filterCategory = this.cmbFilterCategory.Text;
         }
     }
 }

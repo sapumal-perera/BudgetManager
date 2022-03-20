@@ -58,9 +58,23 @@
     <Compile Include="AddCategory.Designer.cs">
       <DependentUpon>AddCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="CategoryDataStore.cs">
+      <DependentUpon>CategoryDataStore.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryDataStore.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CategoryDataStore.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataStore\TransactionTable.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Transaction.cs" />
+    <Compile Include="PredictorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PredictorView.Designer.cs">
+      <DependentUpon>PredictorView.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransactionDataStore.cs">
       <DependentUpon>TransactionDataStore.xsd</DependentUpon>
     </Compile>
@@ -111,6 +125,9 @@
     <EmbeddedResource Include="Model\WeeklyReport.resx">
       <DependentUpon>WeeklyReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PredictorView.resx">
+      <DependentUpon>PredictorView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -123,6 +140,17 @@
     <EmbeddedResource Include="WeeklyReport.resx">
       <DependentUpon>WeeklyReport.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CategoryDataStore.xsc">
+      <DependentUpon>CategoryDataStore.xsd</DependentUpon>
+    </None>
+    <None Include="CategoryDataStore.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CategoryDataStore.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CategoryDataStore.xss">
+      <DependentUpon>CategoryDataStore.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
