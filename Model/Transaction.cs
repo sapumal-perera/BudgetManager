@@ -11,6 +11,10 @@ namespace BudgetManager.Model
 
         public int Id { get; set; }
         public string Title { get => title; set => title = value; }
+        public string Description { get => description; set => description = value; }
+        public DateTime Date { get => date; set => date = value; }
+        public string Category { get => category; set => category = value; }
+        public string Type { get => type; set => type = value; }
 
         private String title;
         private String description;

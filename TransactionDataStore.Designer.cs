@@ -399,7 +399,7 @@ namespace BudgetManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionDataRow AddTransactionDataRow(string Title, string Type, string Description, string Category, string Date) {
+            public TransactionDataRow AddTransactionDataRow(string Title, string Type, string Description, string Category, System.DateTime Date) {
                 TransactionDataRow rowTransactionDataRow = ((TransactionDataRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Title,
@@ -447,7 +447,7 @@ namespace BudgetManager {
                 base.Columns.Add(this.columnDescription);
                 this.columnCategory = new global::System.Data.DataColumn("Category", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCategory);
-                this.columnDate = new global::System.Data.DataColumn("Date", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDate);
             }
             
@@ -655,10 +655,10 @@ namespace BudgetManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Date {
+            public System.DateTime Date {
                 get {
                     try {
-                        return ((string)(this[this.tableTransactionData.DateColumn]));
+                        return ((global::System.DateTime)(this[this.tableTransactionData.DateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Date\' in table \'TransactionData\' is DBNull.", e);

@@ -61,6 +61,9 @@
     <Compile Include="DataStore\TransactionTable.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Transaction.cs" />
+    <Compile Include="TransactionDataStore.cs">
+      <DependentUpon>TransactionDataStore.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransactionDataStore.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

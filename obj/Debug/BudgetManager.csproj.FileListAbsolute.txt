@@ -10,3 +10,7 @@ C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManage
 C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.exe
 C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.pdb
 C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.HomePage.resources
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.AddTransaction.resources
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.AddCategory.resources
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.Model.WeeklyReport.resources
+C:\Users\Sapumal\source\repos\BudgetManager\BudgetManager\obj\Debug\BudgetManager.WeeklyReport.resources

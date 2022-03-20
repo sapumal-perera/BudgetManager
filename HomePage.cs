@@ -25,30 +25,45 @@ namespace BudgetManager
 
         private void HpmePage_load(object sender, EventArgs e)
         {
-            DateTime dateTime = DateTime.UtcNow.Date;
-            lblUser.Text = currentUser.ToString();
-            lblDate.Text = dateTime.ToString();
+          //  DateTime dateTime = DateTime.UtcNow.Date;
+            //lblUser.Text = currentUser.ToString();
+         this.ShowSummary();
         }
 
         private void AddExpenseTransaction(object sender, EventArgs e)
         {
-            AddTransaction addTransactionView = new AddTransaction();
-            addTransactionView.Show();
+            AddTransaction addTransactionView = new AddTransaction("expense");
+            addTransactionView.ShowDialog();
             transactionData = addTransactionView.newTransaction;
-            this.transactionStore.
+            TransactionDataStore.TransactionDataRow transaction = this.transactionStore.TransactionData.NewTransactionDataRow();
+            transaction.Type = transactionData.Type;
+            transaction.Date = transactionData.Date;
+            transaction.Title = transactionData.Title;
+            transaction.Description = transactionData.Description;
+            transaction.Category = transactionData.Category;
+
+            this.transactionStore.TransactionData.AddTransactionDataRow(transaction);
+           
 
         }
 
         private void AddIncomeTransaction(object sender, EventArgs e)
         {
-
+            AddTransaction addTransactionView = new AddTransaction("income");
+            addTransactionView.Show();
+            transactionData = addTransactionView.newTransaction;
+            //this.transactionStore.
         }
 
         private void ShowWeklySummary(object sender, EventArgs e)
         {
-
+        
         }
 
+        private void ShowSummary()
+        {
+            this.dtgTransactionGrid.DataSource = this.transactionStore.TransactionData;
+        }
         private void OpenPredictor(object sender, EventArgs e)
         {
 

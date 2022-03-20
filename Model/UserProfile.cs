@@ -11,7 +11,7 @@ namespace BudgetManager.Model
         List<String> userList = new List<String> {"Steve", "Bill"};
         public Boolean LoginUser(string username, string password)
         {
-           if(userList.Contains(username))
+           if(userList.Contains(username) && password.Equals("123"))
             {
                 return true;
             } else
