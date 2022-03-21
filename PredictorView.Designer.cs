@@ -30,7 +30,7 @@
         {
             this.dtDatePicker = new System.Windows.Forms.DateTimePicker();
             this.cmbType = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbCat = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPredict = new System.Windows.Forms.Button();
@@ -41,50 +41,56 @@
             // 
             // dtDatePicker
             // 
-            this.dtDatePicker.Location = new System.Drawing.Point(145, 83);
+            this.dtDatePicker.Location = new System.Drawing.Point(193, 102);
+            this.dtDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtDatePicker.Name = "dtDatePicker";
-            this.dtDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.dtDatePicker.Size = new System.Drawing.Size(265, 22);
             this.dtDatePicker.TabIndex = 0;
             // 
             // cmbType
             // 
             this.cmbType.FormattingEnabled = true;
-            this.cmbType.Location = new System.Drawing.Point(145, 148);
+            this.cmbType.Location = new System.Drawing.Point(193, 182);
+            this.cmbType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(200, 21);
+            this.cmbType.Size = new System.Drawing.Size(265, 24);
             this.cmbType.TabIndex = 1;
             // 
-            // comboBox2
+            // cmbCat
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(145, 204);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 21);
-            this.comboBox2.TabIndex = 2;
+            this.cmbCat.FormattingEnabled = true;
+            this.cmbCat.Location = new System.Drawing.Point(193, 251);
+            this.cmbCat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCat.Name = "cmbCat";
+            this.cmbCat.Size = new System.Drawing.Size(265, 24);
+            this.cmbCat.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(519, 128);
+            this.label1.Location = new System.Drawing.Point(692, 158);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
+            this.label1.Size = new System.Drawing.Size(125, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Predicted total up to";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(519, 91);
+            this.label2.Location = new System.Drawing.Point(692, 112);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.Size = new System.Drawing.Size(119, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Predicted value for";
             // 
             // btnPredict
             // 
-            this.btnPredict.Location = new System.Drawing.Point(145, 287);
+            this.btnPredict.Location = new System.Drawing.Point(193, 353);
+            this.btnPredict.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPredict.Name = "btnPredict";
-            this.btnPredict.Size = new System.Drawing.Size(75, 23);
+            this.btnPredict.Size = new System.Drawing.Size(100, 28);
             this.btnPredict.TabIndex = 5;
             this.btnPredict.Text = "Predict";
             this.btnPredict.UseVisualStyleBackColor = true;
@@ -93,44 +99,48 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(60, 83);
+            this.label3.Location = new System.Drawing.Point(80, 102);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.Size = new System.Drawing.Size(93, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Required date";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(60, 151);
+            this.label4.Location = new System.Drawing.Point(80, 186);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.Size = new System.Drawing.Size(39, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Type";
             // 
             // cmbCategory
             // 
             this.cmbCategory.AutoSize = true;
-            this.cmbCategory.Location = new System.Drawing.Point(60, 207);
+            this.cmbCategory.Location = new System.Drawing.Point(80, 255);
+            this.cmbCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(49, 13);
+            this.cmbCategory.Size = new System.Drawing.Size(62, 16);
             this.cmbCategory.TabIndex = 8;
             this.cmbCategory.Text = "Category";
             // 
             // PredictorView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.cmbCategory);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnPredict);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbCat);
             this.Controls.Add(this.cmbType);
             this.Controls.Add(this.dtDatePicker);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PredictorView";
             this.Text = "PredictorView";
             this.ResumeLayout(false);
@@ -142,7 +152,7 @@
 
         private System.Windows.Forms.DateTimePicker dtDatePicker;
         private System.Windows.Forms.ComboBox cmbType;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbCat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPredict;

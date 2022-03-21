@@ -19,6 +19,11 @@ namespace BudgetManager
 
         private void onPredictValue(object sender, EventArgs e)
         {
+            DateTime date = this.dtDatePicker.Value.Date;
+            String category = this.cmbCat.Text;
+            String type = this.cmbCat.Text;
+
+
 
         }
     }

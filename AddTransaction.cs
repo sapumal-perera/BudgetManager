@@ -51,13 +51,17 @@ namespace BudgetManager
 
         private void AddTransaction_load(object sender, EventArgs e)
         {
-            this.categories.Add(new Category("rrr", "aaa", "bbb", "ccc"));
-           this.cmbCategory.DataSource = this.categories;
+           this.categories.Add(new Category("rrr", "aaa", "bbb", "ccc"));
+            this.cmbCategory.DataSource = this.categories;
             this.cmbCategory.DisplayMember = "Title";
+
         }
 
-        private void bindCategories() 
+        private void bindCategories()
         {
+            this.cmbCategory.DataSource = null;
+            this.cmbCategory.DataSource = this.categories;
+            this.cmbCategory.DisplayMember = "Title";
             this.cmbCategory.Refresh();
         }
     }
