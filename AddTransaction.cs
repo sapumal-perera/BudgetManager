@@ -25,7 +25,8 @@ namespace BudgetManager
            String description = this.txtBudget.Text;
            String category = this.cmbCategory.Text;
            String type = this.type;
-           newTransaction = new Model.Transaction(title: title, description: description, date: DateTime.Today, category: category, type: type);
+           DateTime date = this.dateTimePicker1.Value.Date;
+            newTransaction = new Model.Transaction(title: title, description: description, date: date, category: category, type: type);
            this.Hide();
         }
 

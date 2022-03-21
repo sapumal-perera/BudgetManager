@@ -31,9 +31,29 @@ namespace BudgetManager
 
         private void HpmePage_load(object sender, EventArgs e)
         {
-          //  DateTime dateTime = DateTime.UtcNow.Date;
+            //  DateTime dateTime = DateTime.UtcNow.Date;
             //lblUser.Text = currentUser.ToString();
-         this.ShowSummary();
+            TransactionDataStore.TransactionDataRow transaction = this.transactionStore.TransactionData.NewTransactionDataRow();
+            transaction.Title = "Internet bill";
+            transaction.Description = "Payed for mobitel";
+            transaction.Category = "utility";
+            transaction.Type = "expense";
+            this.transactionStore.TransactionData.AddTransactionDataRow(transaction);
+
+            TransactionDataStore.TransactionDataRow transaction2 = this.transactionStore.TransactionData.NewTransactionDataRow();
+            transaction2.Title = "Resturant bill";
+            transaction2.Description = "Payed for mobitel";
+            transaction2.Category = "Food";
+            transaction2.Type = "expense";
+            this.transactionStore.TransactionData.AddTransactionDataRow(transaction2);
+
+            TransactionDataStore.TransactionDataRow transaction3 = this.transactionStore.TransactionData.NewTransactionDataRow();
+            transaction3.Title = "CSE Dividends";
+            transaction3.Description = "Dividends for stocks";
+            transaction3.Category = "dividends";
+            transaction3.Type = "income";
+            this.transactionStore.TransactionData.AddTransactionDataRow(transaction3);
+            this.ShowSummary();
         }
 
         private void AddExpenseTransaction(object sender, EventArgs e)
@@ -57,9 +77,17 @@ namespace BudgetManager
         {
             AddTransaction addTransactionView = new AddTransaction("income");
             addTransactionView.RecordAdded += CategoryAdded;
-            addTransactionView.Show();
+            addTransactionView.ShowDialog();
 
             transactionData = addTransactionView.newTransaction;
+            TransactionDataStore.TransactionDataRow transaction = this.transactionStore.TransactionData.NewTransactionDataRow();
+            transaction.Type = transactionData.Type;
+            transaction.Date = transactionData.Date;
+            transaction.Title = transactionData.Title;
+            transaction.Description = transactionData.Description;
+            transaction.Category = transactionData.Category;
+
+            this.transactionStore.TransactionData.AddTransactionDataRow(transaction);
             //this.transactionStore.
         }
         private void CategoryAdded(object sender, Category catg)
@@ -84,10 +112,22 @@ namespace BudgetManager
 
         private void onClickFilter(object sender, EventArgs e)
         {
-            this.filterFromDate = this.dtFilterFromDate.Value;
-            this.filterToDate = this.dtFilterToDate.Value;
+            this.filterFromDate = this.dtFilterFromDate.Value.Date;
+            this.filterToDate = this.dtFilterToDate.Value.Date;
             this.filterType = this.cmbFilterType.Text;
             this.filterCategory = this.cmbFilterCategory.Text;
+            DataView dv = new DataView(this.transactionStore.TransactionData);
+          //  dv.RowFilter = "Category = '" + this.filterCategory + "' AND Type = '"+this.filterType+"'";
+
+            dv.RowFilter = "Date > '" + this.filterFromDate + "' And  Date <'" + this.filterToDate + "'";
+            this.dtgTransactionGrid.DataSource = dv;
+
+        }
+
+        private void onReserSummaryView(object sender, EventArgs e)
+        {
+            DataView dv = new DataView(this.transactionStore.TransactionData);
+            this.dtgTransactionGrid.DataSource = dv;
         }
     }
 }
