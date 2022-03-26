@@ -27,11 +27,20 @@ namespace BudgetManager
             {
                 HomePage homePage = new HomePage();
                 homePage.currentUser = username;
-                homePage.Show();
                 this.Hide();
+                homePage.Show();
             }
 
 
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            this.txtPassword.PasswordChar = '*';
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                MessageBox.Show("The Caps Lock is ON.");
+            }
         }
     }
 }

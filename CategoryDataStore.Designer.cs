@@ -287,6 +287,8 @@ namespace BudgetManager {
             
             private global::System.Data.DataColumn columnBudget;
             
+            private global::System.Data.DataColumn columnCurrentTotal;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public CategoryDataTable() {
@@ -354,6 +356,14 @@ namespace BudgetManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CurrentTotalColumn {
+                get {
+                    return this.columnCurrentTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +399,14 @@ namespace BudgetManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CategoryRow AddCategoryRow(string Title, string Description, string Type, string Budget) {
+            public CategoryRow AddCategoryRow(string Title, string Description, string Type, double Budget, double CurrentTotal) {
                 CategoryRow rowCategoryRow = ((CategoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Title,
                         Description,
                         Type,
-                        Budget};
+                        Budget,
+                        CurrentTotal};
                 rowCategoryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCategoryRow);
                 return rowCategoryRow;
@@ -422,6 +433,7 @@ namespace BudgetManager {
                 this.columnDescription = base.Columns["Description"];
                 this.columnType = base.Columns["Type"];
                 this.columnBudget = base.Columns["Budget"];
+                this.columnCurrentTotal = base.Columns["CurrentTotal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -433,8 +445,10 @@ namespace BudgetManager {
                 base.Columns.Add(this.columnDescription);
                 this.columnType = new global::System.Data.DataColumn("Type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnType);
-                this.columnBudget = new global::System.Data.DataColumn("Budget", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnBudget = new global::System.Data.DataColumn("Budget", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBudget);
+                this.columnCurrentTotal = new global::System.Data.DataColumn("CurrentTotal", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCurrentTotal);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -625,10 +639,10 @@ namespace BudgetManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Budget {
+            public double Budget {
                 get {
                     try {
-                        return ((string)(this[this.tableCategory.BudgetColumn]));
+                        return ((double)(this[this.tableCategory.BudgetColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Budget\' in table \'Category\' is DBNull.", e);
@@ -636,6 +650,22 @@ namespace BudgetManager {
                 }
                 set {
                     this[this.tableCategory.BudgetColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public double CurrentTotal {
+                get {
+                    try {
+                        return ((double)(this[this.tableCategory.CurrentTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CurrentTotal\' in table \'Category\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCategory.CurrentTotalColumn] = value;
                 }
             }
             
@@ -685,6 +715,18 @@ namespace BudgetManager {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetBudgetNull() {
                 this[this.tableCategory.BudgetColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCurrentTotalNull() {
+                return this.IsNull(this.tableCategory.CurrentTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCurrentTotalNull() {
+                this[this.tableCategory.CurrentTotalColumn] = global::System.Convert.DBNull;
             }
         }
         

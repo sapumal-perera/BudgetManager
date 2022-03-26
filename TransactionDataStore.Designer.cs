@@ -289,6 +289,8 @@ namespace BudgetManager {
             
             private global::System.Data.DataColumn columnDate;
             
+            private global::System.Data.DataColumn columnAmmount;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TransactionDataDataTable() {
@@ -364,6 +366,14 @@ namespace BudgetManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AmmountColumn {
+                get {
+                    return this.columnAmmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -399,14 +409,15 @@ namespace BudgetManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionDataRow AddTransactionDataRow(string Title, string Type, string Description, string Category, System.DateTime Date) {
+            public TransactionDataRow AddTransactionDataRow(string Title, string Type, string Description, string Category, System.DateTime Date, double Ammount) {
                 TransactionDataRow rowTransactionDataRow = ((TransactionDataRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Title,
                         Type,
                         Description,
                         Category,
-                        Date};
+                        Date,
+                        Ammount};
                 rowTransactionDataRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTransactionDataRow);
                 return rowTransactionDataRow;
@@ -434,6 +445,7 @@ namespace BudgetManager {
                 this.columnDescription = base.Columns["Description"];
                 this.columnCategory = base.Columns["Category"];
                 this.columnDate = base.Columns["Date"];
+                this.columnAmmount = base.Columns["Ammount"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -449,6 +461,8 @@ namespace BudgetManager {
                 base.Columns.Add(this.columnCategory);
                 this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDate);
+                this.columnAmmount = new global::System.Data.DataColumn("Ammount", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAmmount);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -671,6 +685,22 @@ namespace BudgetManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public double Ammount {
+                get {
+                    try {
+                        return ((double)(this[this.tableTransactionData.AmmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ammount\' in table \'TransactionData\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransactionData.AmmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsTitleNull() {
                 return this.IsNull(this.tableTransactionData.TitleColumn);
             }
@@ -727,6 +757,18 @@ namespace BudgetManager {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDateNull() {
                 this[this.tableTransactionData.DateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAmmountNull() {
+                return this.IsNull(this.tableTransactionData.AmmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAmmountNull() {
+                this[this.tableTransactionData.AmmountColumn] = global::System.Convert.DBNull;
             }
         }
         
